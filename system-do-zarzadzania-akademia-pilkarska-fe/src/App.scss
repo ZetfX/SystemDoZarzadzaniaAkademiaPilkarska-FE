@@ -463,7 +463,26 @@ html, body {
       font-family: "Open Sans", sans-serif;
       display: none;
     }
+ 
   }
+  .nohidden{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    font-family: "Open Sans", sans-serif;
+    display: block;
+  }
+
+  .hidden{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    font-family: "Open Sans", sans-serif;
+    display: none;
+  }
+
+  
+  
 
   .add-form-button  {
     display: flex;

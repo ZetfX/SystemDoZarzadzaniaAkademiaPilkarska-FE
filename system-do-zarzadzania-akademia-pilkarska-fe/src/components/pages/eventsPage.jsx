@@ -15,6 +15,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 
 const API_ALL_EVENTS = "/admin-coach/allEvents/";
 const API_GET_EVENT_BY_ID = "/admin-coach/getEventById/"
+const API_ALL_EVENTS_BY_TRAINING_GROUP = "/admin-coach/allEventsByTrainingGroup/"
 
 const Events = () => {
   const location = useLocation();
@@ -34,12 +35,19 @@ const Events = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [blur, setBlur] = useState(false);
-  const academyId = JSON.parse(localStorage.getItem("user")).academy.id;
+  const user =JSON.parse(localStorage.getItem("user"))
+  const userRole= user.role;
+  const academyId = user.academy.id;
   const controller = new AbortController();
 
   useEffect(() => {
     let isMounted = true;
+    if(userRole ==="COACH" || userRole ==="CASUAL_USER"){
+      getAllAcademyEventsByTrainingGroup(isMounted, controller)
+    }
+    else{
     getAllAcademyEvents(isMounted, controller);
+    }
     return () => {
       isMounted = false;
       controller.abort();
@@ -48,7 +56,12 @@ const Events = () => {
 
   const reloadData = () => {
     let isMounted = true;
+    if(userRole ==="COACH" || userRole ==="CASUAL_USER"){
+      getAllAcademyEventsByTrainingGroup(isMounted, controller)
+    }
+    else{
     getAllAcademyEvents(isMounted, controller);
+    }
     closeModal();
   };
 
@@ -92,15 +105,49 @@ const Events = () => {
       } else if (error.response.status === 403) {
         navigate("/", { state: { from: location }, replace: true });
       } else {
-        setErrMsg("Nie można pobrać obiektów");
+        setErrMsg("Nie można pobrać wydarzeń");
       }
       errorRef.current.focus();
     }
   };
 
+  const getAllAcademyEventsByTrainingGroup = async (isMounted, controller) => {
+    try {
+      const response = await axiosPrivate.get(API_ALL_EVENTS_BY_TRAINING_GROUP +user.id, {
+        signal: controller.signal,
+      });
+      const data = response?.data?.events;
+      const modifiedData = data.map((result) => ({
+        id : result.id,
+        title: result.eventTitle,
+        start: result.eventStart,
+        end: result.eventEnd,
+
+      }));
+      isMounted && setEvents(modifiedData);
+      setTimeout(function () {
+        setLoading(false);
+      }, 300);
+    } catch (error) {
+      if (!error?.response) {
+        setErrMsg("Brak odpowiedzi z serwera");
+      } else if (error.response.status === 404) {
+        setErrMsg(error.response.data.message);
+      } else if (error.response.status === 403) {
+        navigate("/", { state: { from: location }, replace: true });
+      } else {
+        setErrMsg("Nie można pobrać wydarzeń");
+      }
+      errorRef.current.focus();
+    }
+  };
  
 
   const handleDateClick = (e) => {
+    if(userRole === "CASUAL_USER")
+    {
+      return
+    }
     document.getElementById("fc-container").style.pointerEvents = "none";
     setSelectedDate(e.date);
     setShowModal(true);

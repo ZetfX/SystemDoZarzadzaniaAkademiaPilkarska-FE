@@ -39,7 +39,7 @@ function App() {
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="casual_user" element={<UserPage />} />
+          <Route path="casual_user/*" element={<UserPage />} />
         </Route>
         </Route>
         {/*catch all */}

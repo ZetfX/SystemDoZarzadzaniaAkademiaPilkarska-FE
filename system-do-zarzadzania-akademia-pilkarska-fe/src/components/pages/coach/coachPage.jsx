@@ -5,6 +5,7 @@ import Objects from "../objectsPage";
 import PersistLogin from "../../PersistLogin";
 import Grades from "../gradesPage";
 import Players from "../playersPage";
+import ChangePassword from "../changePassword";
 
 const CoachPage = () => {
   return (
@@ -19,6 +20,7 @@ const CoachPage = () => {
             <Route path="/objects" element={<Objects />} />
             <Route path="/players" element={<Players />} />
             <Route path="/grades" element={<Grades />} />
+            <Route path ="/changePassword" element={<ChangePassword />} />
           </Route>
         </Routes>
       </div>

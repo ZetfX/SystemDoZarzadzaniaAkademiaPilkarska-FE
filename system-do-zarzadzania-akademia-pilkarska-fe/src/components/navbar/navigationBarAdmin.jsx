@@ -11,7 +11,8 @@ import {
   faGraduationCap,
   faSackDollar,
   faDoorOpen,
-  faFutbol
+  faFutbol,
+  faCog,
 } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBarAdmin = () => {
@@ -65,6 +66,12 @@ const NavigationBarAdmin = () => {
               Bilans pieniężny
             </NavLink>
           </li>
+          <li className="link">
+        <NavLink className="navLink" to="/admin/changePassword">
+        <FontAwesomeIcon className="icon" icon={faCog} />
+          Zmień hasło
+        </NavLink>
+        </li>
         </ul>
         <div className="navBtn">
           <NavLink

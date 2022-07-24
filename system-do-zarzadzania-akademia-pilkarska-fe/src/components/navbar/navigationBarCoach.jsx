@@ -2,9 +2,11 @@ import React from "react";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../App.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import {faPersonRunning, faSchool,faComment,faDoorOpen,faFutbol,faGraduationCap} from "@fortawesome/free-solid-svg-icons"
+
+import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome'
+import { faCalendar, } from "@fortawesome/free-regular-svg-icons";
+import {faPersonRunning, faSchool,faDoorOpen,faFutbol,faGraduationCap,faCog} from "@fortawesome/free-solid-svg-icons"
+
 
 
 const NavigationBarCoach = () => {
@@ -40,6 +42,12 @@ const NavigationBarCoach = () => {
           Obiekty
         </NavLink>
         </li>
+        <li className="link">
+        <NavLink className="navLink" to="/coach/changePassword">
+        <FontAwesomeIcon className="icon" icon={faCog} />
+          Zmień hasło
+        </NavLink>
+        </li>  
         </ul>
         <div className="navBtn">
         <NavLink className="navLink" to="/" onClick={(e) =>{e.preventDefault(); localStorage.clear();  navigate("/", { replace: true });}}>

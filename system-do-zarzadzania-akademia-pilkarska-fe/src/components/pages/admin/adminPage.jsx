@@ -8,6 +8,7 @@ import Objects from "../objectsPage"
 import Grades from "../gradesPage"
 import PersistLogin from "../../PersistLogin"
 import BalanceTabPage from "./balanceTabPage"
+import ChangePassword from "../changePassword"
 
 const AdminPage = () => {
     return (
@@ -26,6 +27,7 @@ const AdminPage = () => {
             <Route path="/objects" element = {<Objects/>}/>
             <Route path="/grades" element = {<Grades/>}/>
             <Route path="/balance-financial" element = {<BalanceTabPage/>}/>
+            <Route path ="/changePassword" element={<ChangePassword />} />
             </Route>
         </Routes>
         </div>

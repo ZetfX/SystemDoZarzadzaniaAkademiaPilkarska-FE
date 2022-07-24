@@ -160,9 +160,10 @@ const AddEventForm = (props) => {
     if(user.role ==="ADMIN"){
     getAllAcademyTrainingGroups();
     } 
-    else{
+    if(user.role === "COACH"){
       getCoachTrainingGroup();
     }
+    
     
     
   }, []);
@@ -417,7 +418,7 @@ const AddEventForm = (props) => {
         <>
           <div className="add-form">
             <h1 className="add-form-title">
-              {props.isEdit ? "Edytuj " : "Dodaj"} wydarzenie
+              {user.id === props?.event?.organizer?.id ? props.isEdit ? "Edytuj wydarzenie " : "Dodaj wydarzenie" : "Szczegóły wydarzenia"} 
             </h1>
 
             <label htmlFor="organizer" hidden={props?.isEdit ? "" : "hidden"}>
