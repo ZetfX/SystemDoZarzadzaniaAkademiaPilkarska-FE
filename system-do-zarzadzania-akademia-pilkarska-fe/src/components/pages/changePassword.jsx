@@ -75,10 +75,7 @@ const ChangePassword = () => {
     setIsPasswordsSame(result);
   }, [newPassword,passwordConfirm]);
 
-  console.log(isPasswordsSame)
-  console.log("potwierdz:" +passwordConfirm)
-  console.log(passwordConfirm.length)
-  console.log("nowe: " + newPassword)
+
 
   return (
     <>

@@ -55,7 +55,7 @@ const NavigationBarAdmin = () => {
             </NavLink>
           </li>
           <li className="link">
-            <NavLink className="navLink" to="/admin/announcements">
+            <NavLink className="navLink" to="/admin/grades">
               <FontAwesomeIcon className="icon" icon={faGraduationCap} />
               Oceny trenerów
             </NavLink>

@@ -9,6 +9,9 @@ import Grades from "../gradesPage"
 import PersistLogin from "../../PersistLogin"
 import BalanceTabPage from "./balanceTabPage"
 import ChangePassword from "../changePassword"
+import AllCoachesGrades from "./coachesGradesPage"
+import SeeGrade from "../seeGrade"
+
 
 const AdminPage = () => {
     return (
@@ -25,9 +28,10 @@ const AdminPage = () => {
             <Route path="/training-groups" element = {<TrainingGroups/>}/>
             <Route path="/coaches" element = {<Coaches/>}/>
             <Route path="/objects" element = {<Objects/>}/>
-            <Route path="/grades" element = {<Grades/>}/>
+            <Route path="/grades" element = {<AllCoachesGrades/>}/>
             <Route path="/balance-financial" element = {<BalanceTabPage/>}/>
             <Route path ="/changePassword" element={<ChangePassword />} />
+            <Route path="/grades/seeGrade" element = {<SeeGrade/>}/>
             </Route>
         </Routes>
         </div>

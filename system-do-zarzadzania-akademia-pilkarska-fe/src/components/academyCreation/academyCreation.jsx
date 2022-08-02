@@ -61,7 +61,7 @@ const CreateAcademy = () => {
             >
               {errMsg}
             </p>
-            <div className="header">Załóż Akademie</div>
+            <div className="header">Załóż Akademię</div>
             <div className="content">
               <div className="form">
                 <div className="form-group">
@@ -80,7 +80,7 @@ const CreateAcademy = () => {
             </div>
             <div className="footer">
               <button type="button" className="btn" onClick={createAcademy}>
-                Utwórz akademie
+                Utwórz akademię
               </button>
             </div>
           </div>

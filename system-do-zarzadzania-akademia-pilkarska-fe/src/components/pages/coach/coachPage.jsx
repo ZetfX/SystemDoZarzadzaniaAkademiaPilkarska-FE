@@ -3,9 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import Events from "../eventsPage";
 import Objects from "../objectsPage";
 import PersistLogin from "../../PersistLogin";
-import Grades from "../gradesPage";
+import CoachGrades from "./coachGradePage";
 import Players from "../playersPage";
 import ChangePassword from "../changePassword";
+import AddGrade from "../addGrade";
 
 const CoachPage = () => {
   return (
@@ -19,8 +20,9 @@ const CoachPage = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/objects" element={<Objects />} />
             <Route path="/players" element={<Players />} />
-            <Route path="/grades" element={<Grades />} />
+            <Route path="/grades" element={<CoachGrades />} />
             <Route path ="/changePassword" element={<ChangePassword />} />
+            <Route path ="/grades/addGrade" element={<AddGrade />} />
           </Route>
         </Routes>
       </div>
