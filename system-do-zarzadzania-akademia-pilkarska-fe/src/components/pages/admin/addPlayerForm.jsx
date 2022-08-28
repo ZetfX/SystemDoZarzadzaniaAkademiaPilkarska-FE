@@ -11,7 +11,7 @@ const NAME_SURNAME_REGEX =
 const PESEL_REGEX = "^[0-9]{11}$";
 const TELEPHONE_NUMBER_REGEX =
   "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{3,5}$";
-const EMAIL_REGEX = "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$";
+const EMAIL_REGEX = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 const API_GET_TRAINING_GROUPS = "/admin/allTrainingGroups/";
 
 const API_CREATE_PLAYER = "/admin/createPlayer";

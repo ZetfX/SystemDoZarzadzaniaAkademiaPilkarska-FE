@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../App.scss";
 
-const EMAIL_REGEX =/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const EMAIL_REGEX =/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
 const NAME_SURNAME_REGEX = /([A-ZĄĆĘŁŃÓŚŹŻ][-,a-ząćęłńóśTtUuWwYyZzŹźŻż. ']+[ ]*)+/
 

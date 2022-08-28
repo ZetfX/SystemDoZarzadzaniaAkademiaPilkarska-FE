@@ -10,7 +10,7 @@ const NAME_SURNAME_REGEX =
 const PESEL_REGEX = "^[0-9]{11}$";
 const TELEPHONE_NUMBER_REGEX =
   "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{3,6}$";
-const EMAIL_REGEX = "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$";
+const EMAIL_REGEX = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
 const API_CREATE_COACH = "/admin/createCoach";
 const API_EDIT_COACH = "/admin/editCoach/";
